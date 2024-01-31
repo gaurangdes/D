@@ -1,0 +1,9 @@
+public class UndoomDice {
+    public static int[] undoomDice(int[] die) {
+        int[] newDie = new int[die.length];
+        for (int i = 0; i < die.length; i++) {
+            newDie[i] = Math.min(die[i], 4);
+        }
+        return newDie;
+    }
+}

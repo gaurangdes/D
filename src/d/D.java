@@ -9,7 +9,7 @@ package d;
  * @author ASUS
  */
 public class D {
- public static void main(String[] args) {
+    public static void main(String[] args) {
         int[] dieA = {1, 2, 3, 4, 5, 6};
         int[] dieB = {1, 2, 3, 4, 5, 6};
 
@@ -21,6 +21,7 @@ public class D {
         System.out.println("Part B:");
         partB(dieA, dieB);
     }
+
     public static void partA(int[] dieA, int[] dieB) {
         // 1. Total combinations
         int totalCombinations = dieA.length * dieB.length;
@@ -48,28 +49,31 @@ public class D {
                     if (i + j == sum) {
                         count++;
                     }
-                    public static void partB(int[] dieA, int[] dieB) {
-                        int[] newDieA = undoomDice(dieA);
-                        int[] newDieB = undoomDice(dieB);
-
-                        // Display the new dice
-                        for (int i : newDieA) {
-                            System.out.print(i + " ");
-                        }
-                        System.out.println();
-                        for (int i : newDieB) {
-                            System.out.print(i + " ");
-                        }
-                    }
-                    public static int[] undoomDice(int[] die) {
-                        int[] newDie = new int[die.length];
-                        for (int i = 0; i < die.length; i++) {
-                            newDie[i] = Math.min(die[i], 4);
-                        }
-                        return newDie;
-                    }
-
-   
+                }
+            }
+            System.out.println("P(Sum = " + sum + ") = " + count + "/36");
+        }
     }
-    
+
+    public static void partB(int[] dieA, int[] dieB) {
+        int[] newDieA = undoomDice(dieA);
+        int[] newDieB = undoomDice(dieB);
+
+        // Display the new dice
+        for (int i : newDieA) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : newDieB) {
+            System.out.print(i + " ");
+        }
+    }
+
+    public static int[] undoomDice(int[] die) {
+        int[] newDie = new int[die.length];
+        for (int i = 0; i < die.length; i++) {
+            newDie[i] = Math.min(die[i], 4);
+        }
+        return newDie;
+    }
 }
